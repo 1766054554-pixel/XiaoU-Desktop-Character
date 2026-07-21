@@ -1,0 +1,77 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: XiaoU-Windows-x64
+          - os: macos-14
+            artifact: XiaoU-macOS-arm64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: .\scripts\setup_environment.ps1
+      - name: Prepare macOS
+        if: runner.os == 'macOS'
+        run: ./scripts/setup_environment.sh
+      - name: Test Windows
+        if: runner.os == 'Windows'
+        env:
+          QT_QPA_PLATFORM: offscreen
+        shell: pwsh
+        run: .\.venv\Scripts\python.exe -m pytest
+      - name: Test macOS
+        if: runner.os == 'macOS'
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: .venv/bin/python -m pytest
+      - name: Build Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: .\scripts\build.ps1
+      - name: Package Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: Compress-Archive -Path dist\XiaoU -DestinationPath ${{ matrix.artifact }}.zip
+      - name: Build macOS
+        if: runner.os == 'macOS'
+        run: ./scripts/build_macos.sh
+      - name: Package macOS
+        if: runner.os == 'macOS'
+        run: ditto -c -k --sequesterRsrc --keepParent dist/XiaoU.app ${{ matrix.artifact }}.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}.zip
+          if-no-files-found: error
+
+  publish:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release-assets/*.zip
+          generate_release_notes: true

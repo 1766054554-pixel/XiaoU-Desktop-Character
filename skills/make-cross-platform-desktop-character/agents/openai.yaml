@@ -1,0 +1,4 @@
+interface:
+  display_name: "制作跨平台桌面角色"
+  short_description: "从一张图片制作可运行的 Windows 与 macOS 桌面角色"
+  default_prompt: "Use $make-cross-platform-desktop-character to turn my character image into a tested Windows and macOS desktop character."

@@ -1,0 +1,27 @@
+{
+  "speech_lines": [
+    "今天也要开开心心呀",
+    "给你留了一口好吃的！",
+    "忙完记得休息一下"
+  ],
+  "state_speech": {
+    "kiss": [
+      "啵啵送达"
+    ],
+    "hug": [
+      "要抱抱"
+    ]
+  },
+  "menu_actions": [
+    {
+      "label": "发送啵啵",
+      "state": "kiss",
+      "duration_ms": 2200
+    },
+    {
+      "label": "要抱抱",
+      "state": "hug",
+      "duration_ms": 2200
+    }
+  ]
+}

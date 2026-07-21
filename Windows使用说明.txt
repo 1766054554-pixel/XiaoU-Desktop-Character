@@ -1,0 +1,21 @@
+小u Windows 版使用说明
+
+如果你下载的是 GitHub Release 压缩包：
+
+1. 必须先把整个压缩包解压。
+2. 打开解压后的 XiaoU 文件夹。
+3. 双击 XiaoU.exe；不要只把这个 EXE 单独移走。
+
+只有开发构建包才需要执行下面的步骤：
+
+1. 双击“ 双击生成小u程序.bat ”。
+2. 第一次会自动准备环境、检查素材并生成程序，请耐心等待。
+3. 完成后文件夹会自动打开，请双击：
+
+   dist\XiaoU\XiaoU.exe
+
+如果提示“未找到 Python 3.12”：
+请从 https://www.python.org/downloads/windows/ 安装 Python 3.12，安装时勾选
+“Add Python to PATH”，完成后再次双击“ 双击生成小u程序.bat ”。
+
+小u默认始终置顶，在 Windows 上点击桌面或切换其他软件时仍会显示。

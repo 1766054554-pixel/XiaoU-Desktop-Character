@@ -1,0 +1,178 @@
+{
+  "sources": [],
+  "canvas_size": [
+    560,
+    500
+  ],
+  "target_standing_height": 420,
+  "pixel_art": true,
+  "resampling": "nearest",
+  "walk_frame_interval_ms": 150,
+  "walk_motion_factors": [
+    0.8,
+    0.8,
+    1.0,
+    1.0,
+    1.2,
+    1.2,
+    0.8,
+    0.8,
+    1.0,
+    1.0,
+    1.2,
+    1.2
+  ],
+  "animations": {
+    "idle": [
+      "idle/idle_01.png",
+      "idle/idle_02.png",
+      "idle/idle_03.png",
+      "idle/idle_04.png",
+      "idle/idle_05.png",
+      "idle/idle_06.png"
+    ],
+    "walk": [
+      "walk/walk_01.png",
+      "walk/walk_02.png",
+      "walk/walk_03.png",
+      "walk/walk_04.png",
+      "walk/walk_05.png",
+      "walk/walk_06.png",
+      "walk/walk_07.png",
+      "walk/walk_08.png",
+      "walk/walk_09.png",
+      "walk/walk_10.png",
+      "walk/walk_11.png",
+      "walk/walk_12.png"
+    ],
+    "sit": [
+      "sit/sit_01.png",
+      "sit/sit_02.png"
+    ],
+    "sleep": [
+      "sleep/sleep_01.png",
+      "sleep/sleep_02.png"
+    ],
+    "drag": [
+      "interact/drag_01.png",
+      "interact/drag_02.png",
+      "interact/drag_03.png"
+    ],
+    "selfie": [
+      "interact/selfie_01.png",
+      "interact/selfie_02.png",
+      "interact/selfie_03.png",
+      "interact/selfie_04.png"
+    ],
+    "wave": [
+      "states/wave_01.png"
+    ],
+    "happy": [
+      "states/laugh_01.png"
+    ],
+    "shy": [
+      "states/shy_front_01.png"
+    ],
+    "surprised": [
+      "states/surprised_01.png"
+    ],
+    "annoyed": [
+      "states/angry_01.png"
+    ],
+    "sleepy": [
+      "states/sleepy_01.png"
+    ],
+    "curious": [
+      "states/thinking_01.png"
+    ],
+    "pout": [
+      "states/pout_01.png"
+    ],
+    "laugh": [
+      "states/laugh_01.png"
+    ],
+    "enjoy": [
+      "states/enjoy_01.png"
+    ],
+    "kiss": [
+      "states/kiss_01.png"
+    ],
+    "sad": [
+      "states/sad_01.png"
+    ],
+    "bored": [
+      "states/bored_01.png"
+    ],
+    "hungry": [
+      "states/hungry_01.png"
+    ],
+    "thinking": [
+      "states/thinking_01.png"
+    ],
+    "wake": [
+      "states/wake_01.png"
+    ],
+    "cake": [
+      "states/cake_01.png"
+    ],
+    "phone_giggle": [
+      "states/phone_giggle_01.png"
+    ],
+    "wink": [
+      "states/wink_01.png"
+    ],
+    "work": [
+      "states/work_01.png"
+    ],
+    "corgi_pet": [
+      "states/corgi_pet_01.png",
+      "states/corgi_play_01.png"
+    ],
+    "corgi_play": [
+      "states/corgi_pet_01.png",
+      "states/corgi_play_01.png"
+    ],
+    "starry": [
+      "states/starry_01.png"
+    ],
+    "burger": [
+      "states/burger_01.png"
+    ],
+    "camera": [
+      "states/camera_01.png"
+    ],
+    "emperor": [
+      "states/emperor_01.png"
+    ],
+    "hug": [
+      "states/hug_01.png"
+    ],
+    "shy_front": [
+      "states/shy_front_01.png"
+    ],
+    "outfit_twirl": [
+      "outfits/outfit_twirl_01.png"
+    ],
+    "outfit_options": [
+      "outfits/photo_outfit_01_01.png",
+      "outfits/photo_outfit_02_01.png",
+      "outfits/photo_outfit_03_01.png",
+      "outfits/photo_outfit_04_01.png",
+      "outfits/photo_outfit_05_01.png",
+      "outfits/photo_outfit_06_01.png",
+      "outfits/designer_outfit_01_01.png",
+      "outfits/designer_outfit_02_01.png",
+      "outfits/designer_outfit_03_01.png",
+      "outfits/designer_outfit_04_01.png",
+      "outfits/designer_outfit_05_01.png",
+      "outfits/designer_outfit_06_01.png",
+      "outfits/fancy_outfit_01_01.png",
+      "outfits/fancy_outfit_02_01.png",
+      "outfits/fancy_outfit_03_01.png",
+      "outfits/fancy_outfit_04_01.png",
+      "outfits/fancy_outfit_05_01.png",
+      "outfits/fancy_outfit_06_01.png"
+    ]
+  },
+  "icon": "icon.png"
+}

@@ -1,0 +1,46 @@
+name: 原创角色付费定制咨询
+description: 仅讨论系统、画风和动作范围，请勿上传真人照片或联系方式
+title: "[定制咨询] "
+labels:
+  - customization
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个 Issue 是公开页面。请勿上传真人照片、联系方式、账号信息或其他私人素材。
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 目标系统
+      options:
+        - Windows
+        - macOS Apple Silicon
+        - Windows 与 macOS
+    validations:
+      required: true
+  - type: dropdown
+    id: style
+    attributes:
+      label: 期望画风
+      options:
+        - 像素风
+        - 轻度 Q 版
+        - 保留原画风
+        - 尚未确定
+    validations:
+      required: true
+  - type: textarea
+    id: actions
+    attributes:
+      label: 希望包含的动作
+      description: 只写动作需求，不要粘贴或上传私人图片。
+      placeholder: 例如：走路、睡觉、工作、拍照、吃东西、换装
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我不会在公开 Issue 上传真人照片或私人素材
+          required: true
