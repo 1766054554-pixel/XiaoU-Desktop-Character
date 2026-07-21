@@ -8,7 +8,7 @@
 
 - `assets/pet/`：动作帧、换装造型与运行清单；
 - `assets/icons/`：程序与托盘图标；
-- `docs/media/xiaou-walk.gif`：公开走路预览。
+- `docs/media/`：公开走路预览、运行截图、动作合集与服装合集。
 
 允许分享、修改和商业使用，但必须保留以下署名：
 
