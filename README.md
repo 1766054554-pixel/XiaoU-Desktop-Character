@@ -5,77 +5,104 @@
 [![Code License: MIT](https://img.shields.io/badge/code-MIT-1f2937)](LICENSE)
 [![Pixel Art: CC BY 4.0](https://img.shields.io/badge/pixel_art-CC_BY_4.0-d9485f)](ASSETS_LICENSE.md)
 
-把一张人物图片，变成一个会在桌面散步、困了就睡、摸鱼会回话、偶尔还要换新衣服的小u。
+把一张人物图，变成会在桌面散步、困了就睡、摸鱼会回话、偶尔还要换新衣服的桌宠。
 
-她不是贴在屏幕上的静态图片：她有完整动作、状态和对白，会在 **Windows 与 macOS** 上持续显示；这个仓库也保留了“从一张图片到可运行原创角色”的完整 Agent 制作流程。
+公开仓库里的演示角色是**小u**：完整动作、状态和对白，支持 **Windows 与 macOS**。  
+仓库同时开源整套引擎，以及「从一张图到可运行原创角色」的 Agent 制作流程。
 
 ![小u说话与星星眼](docs/media/xiaou-speech.png)
 
 > 你忙你的，小u负责可爱。
 
-想给男朋友或女朋友做一份真的会动的礼物，可以从这里开始；想研究跨平台透明窗口、像素动作系统和 Agent 工作流，也可以直接二次开发。
+**引擎开源，角色可定制。**  
+下载就能玩小u；想做成情侣礼物、好朋友搭档、追星 / 二次元主题桌宠，可以找作者定制。客户照片与专属包只走私密交付，**不会进入公开 Git**。
 
 ## 直接体验
 
-从 [Releases](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/releases/latest) 下载对应系统的压缩包：
+从 [Releases](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/releases/latest) 下载：
 
 | 系统 | 文件 | 打开方式 |
 |---|---|---|
 | Windows 10/11 x64 | `XiaoU-Windows-x64.zip` | 完整解压后双击 `XiaoU/XiaoU.exe` |
-| macOS Apple Silicon | `XiaoU-macOS-arm64.zip` | 解压后首次右键点击 `XiaoU.app`，选择“打开” |
+| macOS Apple Silicon | `XiaoU-macOS-arm64.zip` | 解压后首次右键 `XiaoU.app` →「打开」 |
 
-小u默认保持在其他窗口上方。右键角色可打开动作面板、查看状态、调整大小、暂停移动、控制说话或退出。
+小u默认始终置顶。右键可打开动作面板、看状态、调大小、暂停移动、开关说话，或选择「只留在当前桌面」。
 
 ## 现在能做什么
 
-- 在 Windows 与 macOS 桌面到处散步，切换软件也不会突然消失；
-- 会嘟嘴、大笑、Wink、星星眼、认真思考，也会无聊、饥饿、犯困和生气；
-- 会吃蛋糕、啃汉堡、玩手机、坐椅子摸鱼、拍照，还能陪柯基玩；
-- 有 18 套真正换款式的造型，不是简单换个颜色；
-- 会根据当前动作随机说话，也能一键关闭说话；
-- 有默契、精力、无聊和饥饿状态，变化节奏不会催着你一直点击；
-- 支持动作面板、尺寸调整、暂停移动、隐藏与退出；
-- 原始照片、参考图和制作草稿只保存在本地 `user_assets/`；
-- 角色形象与走路动画必须经过两次人工确认后才能打包；
-- 可用本地互动包增加“发送啵啵”“要抱抱”等动作入口和专属对白，不改变公开默认内容；
+### 单人桌宠
 
-### 动作多到可以慢慢翻
+- Windows / macOS 桌面散步，切应用也不容易消失
+- 丰富表情与日常：嘟嘴、大笑、Wink、星星眼、思考、无聊、饥饿、困倦、生气……
+- 吃蛋糕 / 汉堡、玩手机、电脑摸鱼、拍照自拍、陪柯基玩
+- 多套真实换装（不是简单换色）
+- 随机对白，可一键关闭；说话时尽量不抢键盘焦点
+- 默契 / 精力 / 无聊 / 饥饿四项轻量状态
+- 本地互动包可加「发送啵啵」「要抱抱」等入口与专属台词
+- 原图与制作草稿只在本地 `user_assets/`；角色与走路需人工确认后才能打包
 
-从走路、睡觉、吃东西到相机、手机、柯基和各种表情，全部动作都来自同一个小u原型，不用通用模板脸冒充一致性。
+### 双人靠近互动（引擎通用能力）
+
+同一台电脑上同时开着**两只**桌宠（例如公开小u + 定制角色，或两只定制角色）时：
+
+- 靠近后会面对面打招呼 / 抱抱 / 心心，并对白
+- 右键「找对方玩一下」：先看见对方，再**走过去**碰面
+- 「靠近时和对方互动」可开关；约 45 秒冷却，避免刷屏
+- 各自独立进程、独立素材包，形象与对白互不混用
+
+适合宣传与定制话术：**情侣、闺蜜、好朋友、追星搭档、二次元双人组**——同一套引擎，不同皮肤与文案。
+
+> 说明：双人互动是本机 presence 通道，不经过网络。更多同步动作见 [ROADMAP.md](ROADMAP.md)。
+
+### 动作与造型
 
 ![小u完整动作与表情合集](docs/media/xiaou-action-catalog.png)
 
-### 今天穿哪套？
-
-海军服是主造型，换装则保留了丝绸礼裙、甜酷街头、软萌兔子装、日常裙装和休闲套装等不同轮廓。
-
 ![小u服装造型合集](docs/media/xiaou-outfits.png)
-
-### 面板不是藏起来的彩蛋
-
-打开菜单就能看到状态、说话开关、表情与互动、吃东西、日常动作、随机换装和尺寸控制。
 
 ![小u状态与动作菜单](docs/media/xiaou-menu.png)
 
 ![小u走路预览](docs/media/xiaou-walk.gif)
 
-## 用一张图制作原创角色
+## 付费定制
 
-仓库内提供可安装的 Codex Skill：
+不想自己整理动作素材，可以找作者做**付费定制桌宠**：
+
+| 套餐方向 | 你得到什么 |
+|---|---|
+| **单人** | 照片 / 立绘 → 会走、会睡、会对白的专属桌宠 |
+| **双人** | 两人各一包 + 靠近走近互动 + 专属对白 |
+| **主题向** | 追星、二次元 OC、品牌吉祥物等（须你有权使用的形象） |
+
+**怎么联系**
+
+- GitHub：[Custom Character Issue](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/issues/new?template=custom-character.yml)
+- 抖音 / 小红书 / B 站：以作者主页说明为准（欢迎用成品短视频引流后私信）
+
+**交付与隐私**
+
+- 交付物：私有安装包（Windows / macOS）+ 本地 `user_assets/` 素材
+- 客户照片、自拍、专属对白**不进**公开仓库与公开 Release
+- 请勿在公开 Issue 上传真人照片或联系方式；Issue 只确认系统、画风与范围，正式素材走私密渠道
+
+## 用一张图自制角色（开发者 / Agent）
+
+仓库内提供 Codex Skill：
 
 ```text
 skills/make-cross-platform-desktop-character/
 ```
 
-在 Codex 中使用：
-
 ```text
 Use $make-cross-platform-desktop-character to turn my character image into a tested Windows and macOS desktop character.
 ```
 
-Skill 会依次完成环境检查、原图特征分析、标准角色候选、动作素材、走路预览、两次人工确认、素材一致性检查、程序接入、测试与双平台打包。未经确认不会批量生成动作，也不会把原图上传到 GitHub。
+流程：环境检查 → 原图分析 → 标准角色候选 → 动作与走路预览 → 两次人工确认 → 一致性检查 → 接入与双平台打包。  
+未经确认不会批量生成动作，也不会把原图上传到 GitHub。
 
-完整入口见 [Skill 说明](skills/make-cross-platform-desktop-character/SKILL.md) 与 [Agent 执行指南](agent-guide/AGENT_GUIDE.md)。
+详见 [Skill 说明](skills/make-cross-platform-desktop-character/SKILL.md) 与 [Agent 执行指南](agent-guide/AGENT_GUIDE.md)。
+
+双人互动对白模板示例：[examples/peer-dialogue.json](examples/peer-dialogue.json)；浪漫向本地互动包示例：[examples/interaction-pack-romantic.json](examples/interaction-pack-romantic.json)。
 
 ## 本地开发
 
@@ -105,28 +132,23 @@ Skill 会依次完成环境检查、原图特征分析、标准角色候选、�
 
 构建结果：`dist\XiaoU\XiaoU.exe`
 
-## 付费定制
+## 项目来源与贡献
 
-如果不想自己整理动作素材，可以通过 [Custom Character Issue](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/issues/new?template=custom-character.yml) 联系作者讨论付费定制。
+基于 [Taylor154/OnePic-Desktop-Pet](https://github.com/Taylor154/OnePic-Desktop-Pet)（MIT）二次开发。本仓库在此之上完善了 macOS、跨桌面空间、公开像素角色、动作与对白、双人靠近互动、素材确认门禁、隐私检查、双平台打包、自动测试与制作 Skill。
 
-定制内容可以包括原创像素角色、指定动作、服装、道具和专属对白包。情侣礼物场景可按需加入“发送啵啵”“要抱抱”等互动，但这些内容只进入客户本地交付包，不是另一个公开版本。
-
-请勿在公开 Issue 上传真人照片、联系方式或其他私人素材。Issue 只用于确认系统、画风与动作范围，正式素材通过双方确认的私密渠道处理。
-
-## 项目来源与贡献边界
-
-本项目基于 [Taylor154/OnePic-Desktop-Pet](https://github.com/Taylor154/OnePic-Desktop-Pet) 的 MIT 代码进行二次开发。原项目并非本仓库作者从零创建；本项目新增和完善了 macOS 支持、跨桌面空间显示、公开像素角色、动作与对白系统、素材确认门禁、隐私检查、双平台打包、自动测试和可复用制作 Skill。
-
-详细致谢与修改范围见 [NOTICE.md](NOTICE.md)。
+致谢与修改范围见 [NOTICE.md](NOTICE.md)。欢迎 Issue / PR；涉及私人照片的内容请勿提交到公开仓库。
 
 ## 授权
 
-- 程序代码与文档：MIT License；
-- 海军服小u像素动作、造型与图标：CC BY 4.0，署名“七月在野-yrrr (@1766054554-pixel)”；
-- 用户放入 `user_assets/` 的照片与私人素材：不属于公开仓库内容。
+- 程序代码与文档：MIT License
+- 海军服小u像素动作、造型与图标：CC BY 4.0，署名「七月在野-yrrr (@1766054554-pixel)」
+- `user_assets/` 中的用户照片与私人素材：不属于公开仓库内容
 
-详见 [ASSETS_LICENSE.md](ASSETS_LICENSE.md)。
+详见 [ASSETS_LICENSE.md](ASSETS_LICENSE.md) 与 [docs/隐私说明.md](docs/隐私说明.md)。
 
 ## 路线图
 
-下一阶段计划支持情侣双方各自拥有一个定制角色，并在同一桌面上靠近、碰面或由用户选择后触发同步动作与双方对白。当前版本仍是经过完整验证的单角色版本，设计草案见 [ROADMAP.md](ROADMAP.md)。
+- **已支持**：本机双角色靠近 / 走近碰面、对白分区、定制 branding 与互动包
+- **接下来**：更丰富双人动作、主题模板、双人验收与压力测试
+
+详见 [ROADMAP.md](ROADMAP.md)。
