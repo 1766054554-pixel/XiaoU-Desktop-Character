@@ -50,7 +50,7 @@
 - 默契 / 精力 / 无聊 / 饥饿四项轻量状态
 - 本地互动包可加「打招呼」「拥抱」等入口与专属台词
 
-<p align="center">
+<p align="left">
   <img src="docs/media/01-desktop-rest.jpg" width="400" alt="桌面上的小u" />
 </p>
 
