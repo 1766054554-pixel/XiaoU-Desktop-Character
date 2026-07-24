@@ -57,8 +57,11 @@
 
 <p align="center">
   <img src="docs/media/02-menus-peer.jpg" width="360" alt="右键菜单与找对方玩" />
-  <img src="docs/media/03-peer-meet-hug.jpg" width="360" alt="靠近碰面：打招呼、抱抱、飞吻" />
-  <img src="docs/media/04-peer-daily.jpg" width="360" alt="日常对白碎片" />
+</p>
+
+<p align="center">
+  <img src="docs/media/03-peer-meet-hug.jpg" width="320" alt="靠近碰面：打招呼、抱抱、飞吻" />
+  <img src="docs/media/04-peer-daily.jpg" width="320" alt="日常对白碎片" />
 </p>
 
 > 说明：双人互动是本机 presence 通道，可以设计定制。
