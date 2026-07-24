@@ -19,6 +19,10 @@
 **引擎开源，角色可定制。**  
 下载就能玩小u；想做成礼物、好朋友、追星等主题桌宠，可以找作者定制。
 
+<p align="center">
+  <img src="docs/media/xiaou-walk-preview.gif" width="480" alt="小u散步预览" />
+</p>
+
 ## 直接体验
 
 从 [Releases](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/releases/latest) 下载：
@@ -30,12 +34,11 @@
 
 小u默认始终置顶。右键可打开动作面板、看状态、调大小、暂停移动、开关说话，或选择「只留在当前桌面」。
 
+## 现在能做什么
+
 <p align="center">
   <img src="docs/media/xiaou-action-catalog.jpg" width="480" alt="小u完整动作与表情合集" />
 </p>
-
-
-## 现在能做什么
 
 ### 单人桌宠
 
@@ -48,11 +51,7 @@
 - 本地互动包可加「打招呼」「拥抱」等入口与专属台词
 
 <p align="center">
-  <img src="docs/media/xiaou-walk-preview.gif" width="480" alt="小u散步预览" />
-</p>
-
-<p align="center">
-  <img src="docs/media/01-desktop-rest.jpg" width="360" alt="桌面上的小u" />
+  <img src="docs/media/01-desktop-rest.jpg" width="400" alt="桌面上的小u" />
 </p>
 
 ### 双人靠近互动（引擎通用能力）
@@ -64,7 +63,7 @@
 - 「靠近时和对方互动」可开关；约 45 秒冷却，避免刷屏
 - 各自独立进程、独立素材包，形象与对白互不混用
 
-<p align="center">
+<p align="left">
   <img src="docs/media/02-menus-peer.jpg" width="360" alt="右键菜单与找对方玩" />
 </p>
 
@@ -88,15 +87,15 @@
 
 - GitHub：[Custom Character Issue](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/issues/new?template=custom-character.yml)
 
-<p align="center">
-  <img src="docs/media/03-peer-meet-hug.jpg" width="320" alt="靠近碰面：打招呼、抱抱、飞吻" />
-  <img src="docs/media/04-peer-daily.jpg" width="320" alt="日常对白碎片" />
-</p>
-
 **交付与隐私**
 
 - 交付物：私有安装包（Windows / macOS）+ 本地素材
 - 客户图片、风格、专属设计**不进**公开仓库
+
+<p align="center">
+  <img src="docs/media/05-on-window-music.jpg" width="360" alt="趴在播放器上听歌" />
+  <img src="docs/media/06-on-window-chill.jpg" width="360" alt="摸鱼日常" />
+</p>
 
 ## 用一张图自制角色（开发者 / Agent）
 
@@ -118,8 +117,8 @@ Use $make-cross-platform-desktop-character to turn my character image into a tes
 双人互动对白模板示例：[examples/peer-dialogue.json](examples/peer-dialogue.json)；本地双人互动包示例：[examples/interaction-pack-romantic.json](examples/interaction-pack-romantic.json)。
 
 <p align="center">
-  <img src="docs/media/05-on-window-music.jpg" width="360" alt="趴在播放器上听歌" />
-  <img src="docs/media/06-on-window-chill.jpg" width="360" alt="摸鱼日常" />
+  <img src="docs/media/03-peer-meet-hug.jpg" width="320" alt="靠近碰面：打招呼、抱抱、飞吻" />
+  <img src="docs/media/04-peer-daily.jpg" width="320" alt="日常对白碎片" />
 </p>
 
 ## 本地开发
