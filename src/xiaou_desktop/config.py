@@ -5,7 +5,7 @@
 - 从项目内只读 JSON 读取默认功能设置；
 - 从当前用户本地应用数据目录读取上次窗口位置和用户选择的显示尺寸；
 - 校验窗口、移动、动画和转身节奏并忽略未知字段；
-- 在用户配置目录保存窗口位置、显示尺寸和说话开关，其他体验参数采用项目默认值。
+- 在用户配置目录保存窗口位置、显示尺寸、说话开关、桌面空间偏好和双人靠近互动开关，其他体验参数采用项目默认值。
 
 Agent 快速定位：
 - 配置数据结构位于 PetSettings；
@@ -14,7 +14,8 @@ Agent 快速定位：
 - 不应把机器相关的绝对路径写入项目默认配置。
 
 输入为 JSON 文件，输出为 PetSettings 实例。保存操作会创建用户配置目录并原子写入
-`start_x`、`start_y`、`display_height` 与 `speech_enabled`，不会覆盖项目默认配置。
+`start_x`、`start_y`、`display_height`、`speech_enabled`、`join_all_spaces` 与
+`peer_interaction_enabled`，不会覆盖项目默认配置。
 """
 
 from __future__ import annotations
@@ -46,6 +47,10 @@ class PetSettings:
     mood_update_interval_ms: int = 30000
     always_on_top: bool = True
     speech_enabled: bool = True
+    # True=全部桌面空间都在；False=只留在当前桌面
+    join_all_spaces: bool = True
+    # True=发现其他桌宠靠近时自动互动
+    peer_interaction_enabled: bool = True
     start_x: int | None = None
     start_y: int | None = None
 
@@ -55,7 +60,14 @@ def user_settings_path() -> Path:
 
     base = os.environ.get("LOCALAPPDATA")
     root = Path(base) if base else Path.home() / ".desktop_pet"
-    return root / "XiaoUDesktopCharacter" / "settings.json"
+    folder = "XiaoUDesktopCharacter"
+    try:
+        from .branding import load_branding
+
+        folder = load_branding().settings_folder or folder
+    except Exception:
+        pass
+    return root / folder / "settings.json"
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -105,6 +117,10 @@ def _validated(data: dict[str, Any]) -> PetSettings:
         300000,
         max(10000, int(settings.mood_update_interval_ms)),
     )
+    settings.speech_enabled = bool(settings.speech_enabled)
+    settings.join_all_spaces = bool(settings.join_all_spaces)
+    settings.peer_interaction_enabled = bool(settings.peer_interaction_enabled)
+    settings.always_on_top = bool(settings.always_on_top)
     return settings
 
 
@@ -125,7 +141,15 @@ def load_settings(
         {
             key: value
             for key, value in override.items()
-            if key in {"display_height", "start_x", "start_y", "speech_enabled"}
+            if key
+            in {
+                "display_height",
+                "start_x",
+                "start_y",
+                "speech_enabled",
+                "join_all_spaces",
+                "peer_interaction_enabled",
+            }
         }
     )
     return _validated(base)
@@ -140,6 +164,8 @@ def save_settings(settings: PetSettings, path: Path | None = None) -> Path:
     state = {
         "display_height": settings.display_height,
         "speech_enabled": settings.speech_enabled,
+        "join_all_spaces": settings.join_all_spaces,
+        "peer_interaction_enabled": settings.peer_interaction_enabled,
         "start_x": settings.start_x,
         "start_y": settings.start_y,
     }

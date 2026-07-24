@@ -33,15 +33,13 @@ _EFFECTS: dict[PetState, str] = {
     PetState.ANNOYED: "anger",
     PetState.SLEEPY: "sleep",
     PetState.CURIOUS: "question",
-    PetState.SELFIE: "flash",
-    PetState.LAUGH: "sparkle",
+    # 自拍/拍照不再叠塑料闪光星，避免挡住真人照片气泡
     PetState.KISS: "heart",
     PetState.THINKING: "question",
     PetState.WINK: "sparkle",
-    PetState.STARRY: "sparkle",
-    PetState.CAMERA: "flash",
     PetState.HUG: "heart",
-    PetState.OUTFIT: "flash",
+    PetState.PEER_NOTICE: "exclamation",
+    PetState.PEER_MEET: "heart",
 }
 
 
@@ -172,11 +170,20 @@ def draw_emotion_effect(
     if effect == "sparkle":
         _draw_sparkle(painter, center, size * 0.75)
     elif effect == "heart":
+        try:
+            from .branding import load_branding
+
+            theme = load_branding().theme
+            main = QColor(*theme.heart_main)
+            soft = QColor(*theme.heart_soft)
+        except Exception:
+            main = QColor(255, 105, 150, 245)
+            soft = QColor(255, 165, 195, 235)
         painter.setPen(QPen(QColor(255, 255, 255, 225), max(2.0, size * 0.14)))
-        painter.setBrush(QColor(255, 105, 150, 245))
+        painter.setBrush(main)
         painter.drawPath(_heart_path(center, size * 0.72))
         painter.setPen(Qt.PenStyle.NoPen)
-        painter.setBrush(QColor(255, 165, 195, 235))
+        painter.setBrush(soft)
         painter.drawPath(
             _heart_path(
                 QPointF(center.x() + size * 1.05, center.y() - size * 0.55),

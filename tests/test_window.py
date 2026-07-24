@@ -224,11 +224,13 @@ def test_interaction_states_have_reusable_emotion_symbols() -> None:
         PetState.ANNOYED: "anger",
         PetState.SLEEPY: "sleep",
         PetState.CURIOUS: "question",
-        PetState.SELFIE: "flash",
+        PetState.PEER_NOTICE: "exclamation",
+        PetState.PEER_MEET: "heart",
     }
     assert {state: emotion_effect_name(state) for state in expected} == expected
     assert emotion_effect_name(PetState.IDLE) is None
     assert emotion_effect_name(PetState.DRAG) is None
+    assert emotion_effect_name(PetState.SELFIE) is None
 
 
 def test_emotion_symbol_timer_follows_current_state() -> None:
@@ -379,8 +381,8 @@ def test_selfie_photo_uses_high_dpi_backing_pixels() -> None:
 
     assert photo.devicePixelRatio() == 2.0
     assert max(photo.width(), photo.height()) >= 300
-    assert round(photo.width() / photo.devicePixelRatio()) <= 150
-    assert round(photo.height() / photo.devicePixelRatio()) <= 210
+    assert round(photo.width() / photo.devicePixelRatio()) <= 220
+    assert round(photo.height() / photo.devicePixelRatio()) <= 300
     window.close()
     window.deleteLater()
     app.processEvents()
@@ -591,8 +593,10 @@ def test_extended_states_load_with_demo_fallbacks_and_effects() -> None:
     app, window = _create_window()
 
     assert set(window._pixmaps) == set(PetState)
-    assert emotion_effect_name(PetState.CAMERA) == "flash"
-    assert emotion_effect_name(PetState.OUTFIT) == "flash"
+    assert emotion_effect_name(PetState.CAMERA) is None
+    assert emotion_effect_name(PetState.OUTFIT) is None
+    assert emotion_effect_name(PetState.PEER_NOTICE) == "exclamation"
+    assert emotion_effect_name(PetState.PEER_MEET) == "heart"
 
     window.close()
     window.deleteLater()

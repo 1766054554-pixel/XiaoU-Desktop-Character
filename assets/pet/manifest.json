@@ -172,6 +172,13 @@
       "outfits/fancy_outfit_04_01.png",
       "outfits/fancy_outfit_05_01.png",
       "outfits/fancy_outfit_06_01.png"
+    ],
+    "peer_notice": [
+      "interact/peer_notice_01.png"
+    ],
+    "peer_meet": [
+      "interact/peer_meet_01.png",
+      "interact/peer_meet_02.png"
     ]
   },
   "icon": "icon.png"

@@ -82,5 +82,12 @@ def test_save_settings_writes_json(tmp_path) -> None:
     assert data["start_x"] == 12
     assert data["start_y"] == 34
     assert data["display_height"] == 150
-    assert set(data) == {"display_height", "speech_enabled", "start_x", "start_y"}
+    assert set(data) == {
+        "display_height",
+        "speech_enabled",
+        "join_all_spaces",
+        "peer_interaction_enabled",
+        "start_x",
+        "start_y",
+    }
     assert not path.with_suffix(".json.tmp").exists()

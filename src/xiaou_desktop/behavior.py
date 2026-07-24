@@ -63,6 +63,11 @@ class PetState(str, Enum):
     HUG = "hug"
     SHY_FRONT = "shy_front"
     OUTFIT = "outfit"
+    # 侧面站姿：看向对方 / 日常侧身待机（素材可选）
+    SIDE_STAND = "side_stand"
+    # 双人互动：看见对方 / 碰面互动（素材可选；缺失时回退到相近表情）
+    PEER_NOTICE = "peer_notice"
+    PEER_MEET = "peer_meet"
 
 
 @dataclass(frozen=True)
@@ -271,6 +276,9 @@ class BehaviorModel:
             ]
             states.append(PetState.SHY_FRONT)
             weights.append(0.04)
+            # 侧面站姿：有素材时看向一侧；无素材会回退 idle
+            states.append(PetState.SIDE_STAND)
+            weights.append(0.12)
             if not allow_walk:
                 states.pop(0)
                 weights.pop(0)

@@ -21,15 +21,54 @@ Agent 快速定位：
 
 from __future__ import annotations
 
+import ctypes
 import sys
 
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtGui import QAction, QGuiApplication, QIcon
 from PySide6.QtWidgets import QApplication, QMenu, QSystemTrayIcon
 
+from .branding import load_branding
 from .config import PetSettings, load_settings, save_settings
 from .resources import resource_path
 from .window import PetWindow
+
+
+def _macos_accessory_activation_policy() -> None:
+    """让应用以 Accessory 策略运行，对白弹出时不抢走当前输入焦点。"""
+
+    if sys.platform != "darwin":
+        return
+    try:
+        objc = ctypes.CDLL("/usr/lib/libobjc.A.dylib")
+        objc.sel_registerName.restype = ctypes.c_void_p
+        objc.sel_registerName.argtypes = [ctypes.c_char_p]
+        objc.objc_getClass.restype = ctypes.c_void_p
+        objc.objc_getClass.argtypes = [ctypes.c_char_p]
+        message_address = ctypes.cast(objc.objc_msgSend, ctypes.c_void_p).value
+        if message_address is None:
+            return
+        send = ctypes.CFUNCTYPE(ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p)(
+            message_address
+        )
+        send_int = ctypes.CFUNCTYPE(
+            ctypes.c_bool,
+            ctypes.c_void_p,
+            ctypes.c_void_p,
+            ctypes.c_long,
+        )(message_address)
+        ns_app_class = ctypes.c_void_p(objc.objc_getClass(b"NSApplication"))
+        shared = send(ns_app_class, ctypes.c_void_p(objc.sel_registerName(b"sharedApplication")))
+        if not shared:
+            return
+        # NSApplicationActivationPolicyAccessory = 1
+        send_int(
+            shared,
+            ctypes.c_void_p(objc.sel_registerName(b"setActivationPolicy:")),
+            1,
+        )
+    except (AttributeError, OSError, TypeError, ValueError):
+        return
 
 
 class DesktopPetApplication:
@@ -40,10 +79,12 @@ class DesktopPetApplication:
             QGuiApplication.setHighDpiScaleFactorRoundingPolicy(
                 Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
             )
+        self.branding = load_branding()
         self.qt_app = QApplication.instance() or QApplication(sys.argv)
-        self.qt_app.setApplicationName("小u")
-        self.qt_app.setApplicationDisplayName("小u")
+        self.qt_app.setApplicationName(self.branding.display_name)
+        self.qt_app.setApplicationDisplayName(self.branding.display_name)
         self.qt_app.setQuitOnLastWindowClosed(False)
+        _macos_accessory_activation_policy()
         self.settings = settings or load_settings()
         self.window = PetWindow(self.settings)
         self.window.quit_requested.connect(self.quit)
@@ -52,16 +93,28 @@ class DesktopPetApplication:
     def _create_tray(self) -> QSystemTrayIcon:
         """创建系统托盘图标及其操作菜单。"""
 
-        icon = QIcon(str(resource_path("assets/icons/pet.png")))
+        name = self.branding.display_name
+        icon_path = "assets/icons/pet.png"
+        try:
+            from .resources import resource_path as _rp
+
+            custom_icon = _rp("user_assets/pet/icon.png")
+            icon_path = str(custom_icon)
+        except FileNotFoundError:
+            icon_path = str(resource_path("assets/icons/pet.png"))
+        icon = QIcon(icon_path)
         tray = QSystemTrayIcon(icon, self.qt_app)
-        tray.setToolTip("小u")
+        tray.setToolTip(name)
         menu = QMenu()
 
-        show_action = QAction("显示小u", menu)
+        show_action = QAction(f"显示{name}", menu)
         show_action.triggered.connect(self.show_window)
         menu.addAction(show_action)
 
-        interact_action = QAction("和小u打招呼", menu)
+        interact_action = QAction(
+            str(self.branding.menu.get("greet", f"和{name}打招呼")),
+            menu,
+        )
         interact_action.triggered.connect(self.window.trigger_interaction)
         menu.addAction(interact_action)
 
@@ -75,7 +128,7 @@ class DesktopPetApplication:
         )
         menu.addAction(pause_action)
 
-        hide_action = QAction("隐藏小u", menu)
+        hide_action = QAction(f"隐藏{name}", menu)
         hide_action.triggered.connect(self.window.hide)
         menu.addAction(hide_action)
         menu.addSeparator()
