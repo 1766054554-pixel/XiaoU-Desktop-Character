@@ -88,7 +88,6 @@
 **怎么联系**
 
 - GitHub：[Custom Character Issue](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/issues/new?template=custom-character.yml)
-- 抖音 / 小红书 / B 站：以作者主页说明为准（欢迎用成品短视频引流后私信）
 
 **交付与隐私**
 
