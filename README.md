@@ -5,6 +5,12 @@
 [![Code License: MIT](https://img.shields.io/badge/code-MIT-1f2937)](LICENSE)
 [![Pixel Art: CC BY 4.0](https://img.shields.io/badge/pixel_art-CC_BY_4.0-d9485f)](ASSETS_LICENSE.md)
 
+<p align="center">
+  <img src="docs/media/xiaou-speech.png" width="600" alt="小u说话与星星眼" />
+</p>
+
+> 你忙你的，小u就在这里。
+
 把一张人物图，变成会在桌面散步、困了就睡、摸鱼会回话、偶尔还要换新衣服的桌宠。
 
 公开仓库里的演示角色是**小u**：完整动作、状态和对白，支持 **Windows 与 macOS**。  
@@ -13,12 +19,6 @@
 <p align="center">
   <img src="docs/media/xiaou-action-catalog.jpg" width="480" alt="小u完整动作与表情合集" />
 </p>
-
-<p align="center">
-  <img src="docs/media/xiaou-speech.png" width="520" alt="小u说话与星星眼" />
-</p>
-
-> 你忙你的，小u就在这里。
 
 **引擎开源，角色可定制。**  
 下载就能玩小u；想做成礼物、好朋友、追星等主题桌宠，可以找作者定制。
