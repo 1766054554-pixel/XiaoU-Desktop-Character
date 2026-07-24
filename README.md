@@ -10,7 +10,9 @@
 公开仓库里的演示角色是**小u**：完整动作、状态和对白，支持 **Windows 与 macOS**。  
 仓库同时开源整套引擎，以及「从一张图到可运行原创角色」的 Agent 制作流程。
 
-![桌面上的小u](docs/media/01-desktop-rest.png)
+<p align="center">
+  <img src="docs/media/xiaou-action-catalog.jpg" width="480" alt="小u完整动作与表情合集" />
+</p>
 
 > 你忙你的，小u就在这里。
 
@@ -40,6 +42,10 @@
 - 默契 / 精力 / 无聊 / 饥饿四项轻量状态
 - 本地互动包可加「打招呼」「拥抱」等入口与专属台词
 
+<p align="center">
+  <img src="docs/media/01-desktop-rest.jpg" width="360" alt="桌面上的小u" />
+</p>
+
 ### 双人靠近互动（引擎通用能力）
 
 同一台电脑上同时开着**两只**桌宠（例如公开小u + 定制角色，或两只定制角色）时：
@@ -49,11 +55,11 @@
 - 「靠近时和对方互动」可开关；约 45 秒冷却，避免刷屏
 - 各自独立进程、独立素材包，形象与对白互不混用
 
-![右键菜单与找对方玩](docs/media/02-menus-peer.png)
-
-![靠近碰面：打招呼、抱抱、飞吻](docs/media/03-peer-meet-hug.png)
-
-![日常对白碎片](docs/media/04-peer-daily.png)
+<p align="center">
+  <img src="docs/media/02-menus-peer.jpg" width="360" alt="右键菜单与找对方玩" />
+  <img src="docs/media/03-peer-meet-hug.jpg" width="360" alt="靠近碰面：打招呼、抱抱、飞吻" />
+  <img src="docs/media/04-peer-daily.jpg" width="360" alt="日常对白碎片" />
+</p>
 
 > 说明：双人互动是本机 presence 通道，可以设计定制。
 
@@ -61,13 +67,10 @@
 
 桌宠始终置顶，会趴在你正在用的窗口上——听歌、看歌词、吃一口汉堡再回来。
 
-![趴在播放器上听歌](docs/media/05-on-window-music.png)
-
-![摸鱼日常](docs/media/06-on-window-chill.png)
-
-### 动作与造型
-
-![小u完整动作与表情合集](docs/media/xiaou-action-catalog.png)
+<p align="center">
+  <img src="docs/media/05-on-window-music.jpg" width="360" alt="趴在播放器上听歌" />
+  <img src="docs/media/06-on-window-chill.jpg" width="360" alt="摸鱼日常" />
+</p>
 
 ## 定制
 
