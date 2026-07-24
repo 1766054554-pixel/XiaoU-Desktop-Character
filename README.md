@@ -12,10 +12,10 @@
 
 ![小u说话与星星眼](docs/media/xiaou-speech.png)
 
-> 你忙你的，小u负责可爱。
+> 你忙你的，小u就在这里。
 
 **引擎开源，角色可定制。**  
-下载就能玩小u；想做成情侣礼物、好朋友搭档、追星 / 二次元主题桌宠，可以找作者定制。客户照片与专属包只走私密交付，**不会进入公开 Git**。
+下载就能玩小u；想做成礼物、好朋友、追星等主题桌宠，可以找作者定制。
 
 ## 直接体验
 
@@ -32,41 +32,37 @@
 
 ### 单人桌宠
 
-- Windows / macOS 桌面散步，切应用也不容易消失
-- 丰富表情与日常：嘟嘴、大笑、Wink、星星眼、思考、无聊、饥饿、困倦、生气……
-- 吃蛋糕 / 汉堡、玩手机、电脑摸鱼、拍照自拍、陪柯基玩
-- 多套真实换装（不是简单换色）
-- 随机对白，可一键关闭；说话时尽量不抢键盘焦点
+- Windows / macOS 桌面散步，切应用也不会消失，可以选择留在哪个界面
+- 丰富表情与日常：嘟嘴、大笑、Wink、星星眼、思考、无聊、饥饿、困倦、坐下、惊讶、生气……
+- 吃东西、玩手机、电脑摸鱼、拍照自拍、陪小宠物玩、当小皇帝
+- 多套可设计的精美服装换装
+- 随机对白，可一键关闭
 - 默契 / 精力 / 无聊 / 饥饿四项轻量状态
-- 本地互动包可加「发送啵啵」「要抱抱」等入口与专属台词
-- 原图与制作草稿只在本地 `user_assets/`；角色与走路需人工确认后才能打包
+- 本地互动包可加「打招呼」「拥抱」等入口与专属台词
 
 ### 双人靠近互动（引擎通用能力）
 
 同一台电脑上同时开着**两只**桌宠（例如公开小u + 定制角色，或两只定制角色）时：
 
-- 靠近后会面对面打招呼 / 抱抱 / 心心，并对白
-- 右键「找对方玩一下」：先看见对方，再**走过去**碰面
+- 靠近后会面对面打招呼 / 抱抱 / 发送爱心，并进行随机有意思的对白
+- 右键「找对方玩一下」：先看见对方，再互相**走过去**碰面
 - 「靠近时和对方互动」可开关；约 45 秒冷却，避免刷屏
 - 各自独立进程、独立素材包，形象与对白互不混用
 
-适合宣传与定制话术：**情侣、闺蜜、好朋友、追星搭档、二次元双人组**——同一套引擎，不同皮肤与文案。
 
-> 说明：双人互动是本机 presence 通道，不经过网络。更多同步动作见 [ROADMAP.md](ROADMAP.md)。
+> 说明：双人互动是本机 presence 通道，可以设计定制。
 
 ### 动作与造型
 
 ![小u完整动作与表情合集](docs/media/xiaou-action-catalog.png)
 
-![小u服装造型合集](docs/media/xiaou-outfits.png)
-
 ![小u状态与动作菜单](docs/media/xiaou-menu.png)
 
 ![小u走路预览](docs/media/xiaou-walk.gif)
 
-## 付费定制
+## 定制
 
-不想自己整理动作素材，可以找作者做**付费定制桌宠**：
+不想自己整理动作素材，可以找作者做**定制桌宠**：
 
 | 套餐方向 | 你得到什么 |
 |---|---|
@@ -81,9 +77,8 @@
 
 **交付与隐私**
 
-- 交付物：私有安装包（Windows / macOS）+ 本地 `user_assets/` 素材
-- 客户照片、自拍、专属对白**不进**公开仓库与公开 Release
-- 请勿在公开 Issue 上传真人照片或联系方式；Issue 只确认系统、画风与范围，正式素材走私密渠道
+- 交付物：私有安装包（Windows / macOS）+ 本地素材
+- 客户图片、风格、专属设计**不进**公开仓库
 
 ## 用一张图自制角色（开发者 / Agent）
 
@@ -102,7 +97,7 @@ Use $make-cross-platform-desktop-character to turn my character image into a tes
 
 详见 [Skill 说明](skills/make-cross-platform-desktop-character/SKILL.md) 与 [Agent 执行指南](agent-guide/AGENT_GUIDE.md)。
 
-双人互动对白模板示例：[examples/peer-dialogue.json](examples/peer-dialogue.json)；浪漫向本地互动包示例：[examples/interaction-pack-romantic.json](examples/interaction-pack-romantic.json)。
+双人互动对白模板示例：[examples/peer-dialogue.json](examples/peer-dialogue.json)；本地双人互动包示例：[examples/interaction-pack-romantic.json](examples/interaction-pack-romantic.json)。
 
 ## 本地开发
 
@@ -141,14 +136,8 @@ Use $make-cross-platform-desktop-character to turn my character image into a tes
 ## 授权
 
 - 程序代码与文档：MIT License
-- 海军服小u像素动作、造型与图标：CC BY 4.0，署名「七月在野-yrrr (@1766054554-pixel)」
+- 小u像素动作、造型与图标：CC BY 4.0，署名「七月在野-yrrr (@1766054554-pixel)」
 - `user_assets/` 中的用户照片与私人素材：不属于公开仓库内容
 
 详见 [ASSETS_LICENSE.md](ASSETS_LICENSE.md) 与 [docs/隐私说明.md](docs/隐私说明.md)。
 
-## 路线图
-
-- **已支持**：本机双角色靠近 / 走近碰面、对白分区、定制 branding 与互动包
-- **接下来**：更丰富双人动作、主题模板、双人验收与压力测试
-
-详见 [ROADMAP.md](ROADMAP.md)。
