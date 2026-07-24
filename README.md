@@ -16,10 +16,6 @@
 公开仓库里的演示角色是**小u**：完整动作、状态和对白，支持 **Windows 与 macOS**。  
 仓库同时开源整套引擎，以及「从一张图到可运行原创角色」的 Agent 制作流程。
 
-<p align="center">
-  <img src="docs/media/xiaou-action-catalog.jpg" width="480" alt="小u完整动作与表情合集" />
-</p>
-
 **引擎开源，角色可定制。**  
 下载就能玩小u；想做成礼物、好朋友、追星等主题桌宠，可以找作者定制。
 
@@ -33,6 +29,11 @@
 | macOS Apple Silicon | `XiaoU-macOS-arm64.zip` | 解压后首次右键 `XiaoU.app` →「打开」 |
 
 小u默认始终置顶。右键可打开动作面板、看状态、调大小、暂停移动、开关说话，或选择「只留在当前桌面」。
+
+<p align="center">
+  <img src="docs/media/xiaou-action-catalog.jpg" width="480" alt="小u完整动作与表情合集" />
+</p>
+
 
 ## 现在能做什么
 
@@ -67,21 +68,11 @@
   <img src="docs/media/02-menus-peer.jpg" width="360" alt="右键菜单与找对方玩" />
 </p>
 
-<p align="center">
-  <img src="docs/media/03-peer-meet-hug.jpg" width="320" alt="靠近碰面：打招呼、抱抱、飞吻" />
-  <img src="docs/media/04-peer-daily.jpg" width="320" alt="日常对白碎片" />
-</p>
-
 > 说明：双人互动是本机 presence 通道，可以设计定制。
 
 ### 叠在窗口上摸鱼
 
 桌宠始终置顶，会趴在你正在用的窗口上——听歌、看歌词、吃一口汉堡再回来。
-
-<p align="center">
-  <img src="docs/media/05-on-window-music.jpg" width="360" alt="趴在播放器上听歌" />
-  <img src="docs/media/06-on-window-chill.jpg" width="360" alt="摸鱼日常" />
-</p>
 
 ## 定制
 
@@ -96,6 +87,11 @@
 **怎么联系**
 
 - GitHub：[Custom Character Issue](https://github.com/1766054554-pixel/XiaoU-Desktop-Character/issues/new?template=custom-character.yml)
+
+<p align="center">
+  <img src="docs/media/03-peer-meet-hug.jpg" width="320" alt="靠近碰面：打招呼、抱抱、飞吻" />
+  <img src="docs/media/04-peer-daily.jpg" width="320" alt="日常对白碎片" />
+</p>
 
 **交付与隐私**
 
@@ -120,6 +116,11 @@ Use $make-cross-platform-desktop-character to turn my character image into a tes
 详见 [Skill 说明](skills/make-cross-platform-desktop-character/SKILL.md) 与 [Agent 执行指南](agent-guide/AGENT_GUIDE.md)。
 
 双人互动对白模板示例：[examples/peer-dialogue.json](examples/peer-dialogue.json)；本地双人互动包示例：[examples/interaction-pack-romantic.json](examples/interaction-pack-romantic.json)。
+
+<p align="center">
+  <img src="docs/media/05-on-window-music.jpg" width="360" alt="趴在播放器上听歌" />
+  <img src="docs/media/06-on-window-chill.jpg" width="360" alt="摸鱼日常" />
+</p>
 
 ## 本地开发
 
