@@ -50,9 +50,11 @@
 - 默契 / 精力 / 无聊 / 饥饿四项轻量状态
 - 本地互动包可加「打招呼」「拥抱」等入口与专属台词
 
-<p align="left">
+
+<p align="center">
   <img src="docs/media/01-desktop-rest.jpg" width="400" alt="桌面上的小u" />
 </p>
+
 
 ### 双人靠近互动（引擎通用能力）
 
@@ -63,9 +65,11 @@
 - 「靠近时和对方互动」可开关；约 45 秒冷却，避免刷屏
 - 各自独立进程、独立素材包，形象与对白互不混用
 
-<p align="left">
-  <img src="docs/media/02-menus-peer.jpg" width="360" alt="右键菜单与找对方玩" />
+
+<p align="center">
+  <img src="docs/media/02-menus-peer.jpg" width="320" alt="右键菜单与找对方玩" />
 </p>
+
 
 > 说明：双人互动是本机 presence 通道，可以设计定制。
 
