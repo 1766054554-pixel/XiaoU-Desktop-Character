@@ -14,6 +14,10 @@
   <img src="docs/media/xiaou-action-catalog.jpg" width="480" alt="小u完整动作与表情合集" />
 </p>
 
+<p align="center">
+  <img src="docs/media/xiaou-speech.png" width="520" alt="小u说话与星星眼" />
+</p>
+
 > 你忙你的，小u就在这里。
 
 **引擎开源，角色可定制。**  
@@ -41,6 +45,10 @@
 - 随机对白，可一键关闭
 - 默契 / 精力 / 无聊 / 饥饿四项轻量状态
 - 本地互动包可加「打招呼」「拥抱」等入口与专属台词
+
+<p align="center">
+  <img src="docs/media/xiaou-walk-preview.gif" width="480" alt="小u散步预览" />
+</p>
 
 <p align="center">
   <img src="docs/media/01-desktop-rest.jpg" width="360" alt="桌面上的小u" />
