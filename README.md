@@ -10,7 +10,7 @@
 公开仓库里的演示角色是**小u**：完整动作、状态和对白，支持 **Windows 与 macOS**。  
 仓库同时开源整套引擎，以及「从一张图到可运行原创角色」的 Agent 制作流程。
 
-![小u说话与星星眼](docs/media/xiaou-speech.png)
+![桌面上的小u](docs/media/01-desktop-rest.png)
 
 > 你忙你的，小u就在这里。
 
@@ -49,16 +49,25 @@
 - 「靠近时和对方互动」可开关；约 45 秒冷却，避免刷屏
 - 各自独立进程、独立素材包，形象与对白互不混用
 
+![右键菜单与找对方玩](docs/media/02-menus-peer.png)
+
+![靠近碰面：打招呼、抱抱、飞吻](docs/media/03-peer-meet-hug.png)
+
+![日常对白碎片](docs/media/04-peer-daily.png)
 
 > 说明：双人互动是本机 presence 通道，可以设计定制。
+
+### 叠在窗口上摸鱼
+
+桌宠始终置顶，会趴在你正在用的窗口上——听歌、看歌词、吃一口汉堡再回来。
+
+![趴在播放器上听歌](docs/media/05-on-window-music.png)
+
+![摸鱼日常](docs/media/06-on-window-chill.png)
 
 ### 动作与造型
 
 ![小u完整动作与表情合集](docs/media/xiaou-action-catalog.png)
-
-![小u状态与动作菜单](docs/media/xiaou-menu.png)
-
-![小u走路预览](docs/media/xiaou-walk.gif)
 
 ## 定制
 
